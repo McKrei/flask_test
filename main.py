@@ -8,9 +8,29 @@ context = {'title': 'Заголовок',
 
 @app.route('/')
 def index():
+    class New:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+    new = New('Vasya', 20)
+    lst = [1, 2, 3, 4, 5, 6]
+    for i in lst:
+        print(i)
+    else:
+        print('else')
+
     return render_template(
-        'index.html'
+        'index.html',
+        number=4,
+        hello='hello',
+        world='hello',
+        context=context,
+        new=new,
+        lst=[1, 2, 3, 4, 5, 6]
     )
+
+
 
 
 if __name__ == '__main__':
